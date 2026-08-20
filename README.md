@@ -16,7 +16,7 @@ Enterprise network infrastructure project built using Cisco Packet Tracer.
 
 ## Topology
 
-![Enterprise Network Topology](screenshots/topology-v1.png)
+![alt text](image.png)
 
 ## Technologies
 
@@ -28,3 +28,4 @@ Enterprise network infrastructure project built using Cisco Packet Tracer.
 - DNS
 - NAT
 - ACL
+bl
