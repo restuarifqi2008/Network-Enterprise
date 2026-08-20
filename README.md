@@ -5,7 +5,10 @@ Enterprise network infrastructure project built using Cisco Packet Tracer.
 ## Current Progress
 
 - [x] Network topology design
-- [ ] VLAN configuration
+- [x] VLAN configuration
+- [x] Core MLS trunk configuration
+- [x] Access switch configuration
+- [x] Access switch trunk configuration
 - [ ] IP addressing
 - [ ] Inter-VLAN routing
 - [ ] DHCP
@@ -28,4 +31,3 @@ Enterprise network infrastructure project built using Cisco Packet Tracer.
 - DNS
 - NAT
 - ACL
-bl
