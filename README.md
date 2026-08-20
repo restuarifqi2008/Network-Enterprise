@@ -9,8 +9,8 @@ Enterprise network infrastructure project built using Cisco Packet Tracer.
 - [x] Core MLS trunk configuration
 - [x] Access switch configuration
 - [x] Access switch trunk configuration
-- [ ] IP addressing
-- [ ] Inter-VLAN routing
+- [x] IP addressing
+- [x] Inter-VLAN routing
 - [ ] DHCP
 - [ ] DNS
 - [ ] NAT
