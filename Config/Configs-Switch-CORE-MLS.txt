@@ -1,4 +1,4 @@
-CORE-SW#show running-config 
+CORE-SW#show running-config
 Building configuration...
 
 Current configuration : 2791 bytes
@@ -177,6 +177,3 @@ line vty 5 15
 !
 !
 end
-
-
-CORE-SW#  

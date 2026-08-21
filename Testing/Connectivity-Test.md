@@ -97,3 +97,38 @@ Pengujian SSH dilakukan dari PC pada VLAN 10 Management.
 - Local username digunakan untuk authentication
 - Management dilakukan melalui VLAN 10
 - SSH connectivity berhasil dari Management PC
+
+## 7. Port Security Testing
+
+Port Security diterapkan pada seluruh access port yang terhubung langsung ke PC.
+
+### Konfigurasi Security
+
+- Maximum MAC address: 1
+- MAC address learning: Sticky
+- Violation mode: Shutdown
+- PortFast: Enabled
+- Port Security: Enabled
+
+### Verification
+
+Seluruh access port yang terhubung ke PC menunjukkan status:
+
+`Secure-up`
+
+### Unauthorized Device Test
+
+Pengujian dilakukan pada Access-SW1 Fa0/3 dengan mengganti PC asli menggunakan PC dengan MAC address berbeda.
+
+Hasil pengujian:
+
+- Port Security mendeteksi MAC address yang berbeda.
+- Port masuk status `Secure-shutdown`.
+- Security Violation Count meningkat menjadi `1`.
+- Perangkat tidak dapat menggunakan port tersebut.
+
+### Result
+
+Port Security berhasil mencegah perangkat tidak terotorisasi menggunakan access port.
+
+Status: **PASS**
