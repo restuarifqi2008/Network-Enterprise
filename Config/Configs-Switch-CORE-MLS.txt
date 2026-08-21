@@ -1,7 +1,7 @@
-CORE-SW(config)#do sh run
+CORE-SW#show running-config 
 Building configuration...
 
-Current configuration : 2597 bytes
+Current configuration : 2791 bytes
 !
 version 12.2(37)SE1
 no service timestamps log datetime msec
@@ -22,6 +22,7 @@ ip routing
 !
 !
 !
+username admin privilege 15 secret 5 $1$mERr$VNl1HrkoeysF3ddlTBve81
 !
 !
 !
@@ -31,6 +32,9 @@ ip routing
 !
 !
 !
+!
+ip ssh version 2
+ip domain-name enterprise.local
 !
 !
 spanning-tree mode pvst
@@ -163,7 +167,11 @@ line con 0
 line aux 0
 !
 line vty 0 4
- login
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
 !
 !
 !
@@ -171,4 +179,4 @@ line vty 0 4
 end
 
 
-CORE-SW(config)#
+CORE-SW#  

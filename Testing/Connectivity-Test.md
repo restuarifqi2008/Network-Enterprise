@@ -78,3 +78,22 @@ ACL `GUEST-ISOLATION` berhasil menerapkan segmentasi jaringan untuk VLAN 60.
 Guest tidak dapat mengakses jaringan internal perusahaan, tetapi tetap dapat mengakses jaringan eksternal melalui Internet.
 
 **Security Policy: PASS ✅**
+
+## 6. SSH Management Testing
+
+Pengujian SSH dilakukan dari PC pada VLAN 10 Management.
+
+| Device | Management IP | SSH | Result |
+|---|---|---|---|
+| CORE-SW | 10.10.10.1 | SSH v2 | PASS |
+| ACCESS-SW1 | 10.10.10.2 | SSH v2 | PASS |
+| ACCESS-SW2 | 10.10.10.3 | SSH v2 | PASS |
+| ACCESS-SW3 | 10.10.10.4 | SSH v2 | PASS |
+
+### Security Verification
+
+- SSH version 2 enabled
+- VTY hanya menerima SSH
+- Local username digunakan untuk authentication
+- Management dilakukan melalui VLAN 10
+- SSH connectivity berhasil dari Management PC
