@@ -13,9 +13,9 @@ Enterprise network infrastructure project built using Cisco Packet Tracer.
 - [x] Inter-VLAN routing
 - [ ] DHCP
 - [ ] DNS
-- [ ] NAT
-- [ ] ACL
-- [ ] Network testing
+- [x] NAT
+- [x] ACL
+- [x] Network testing
 
 ## Topology
 
