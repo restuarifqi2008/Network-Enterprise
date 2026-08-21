@@ -40,3 +40,41 @@ Seluruh VLAN diuji untuk memastikan dapat mengakses jaringan eksternal melalui N
 Seluruh VLAN berhasil mencapai jaringan eksternal melalui Edge Router.
 
 NAT/PAT berhasil menerjemahkan private IP address jaringan internal menuju IP interface WAN R1.
+
+## 5. Security Testing — Guest Isolation
+
+Pengujian dilakukan setelah penerapan Extended ACL `GUEST-ISOLATION` pada SVI VLAN 60.
+
+### Before ACL
+
+Sebelum ACL diterapkan, VLAN 60 dapat mengakses seluruh jaringan internal.
+
+| Source | Destination | Result |
+|---|---|---|
+| VLAN 60 | VLAN 10 | PASS |
+| VLAN 60 | VLAN 20 | PASS |
+| VLAN 60 | VLAN 30 | PASS |
+| VLAN 60 | VLAN 40 | PASS |
+| VLAN 60 | VLAN 50 | PASS |
+| VLAN 60 | Internet | PASS |
+
+### After ACL
+
+Setelah ACL diterapkan, akses Guest ke jaringan internal berhasil diblokir.
+
+| Source | Destination | Result |
+|---|---|---|
+| VLAN 60 | VLAN 10 | DENY |
+| VLAN 60 | VLAN 20 | DENY |
+| VLAN 60 | VLAN 30 | DENY |
+| VLAN 60 | VLAN 40 | DENY |
+| VLAN 60 | VLAN 50 | DENY |
+| VLAN 60 | Internet | PASS |
+
+### Kesimpulan
+
+ACL `GUEST-ISOLATION` berhasil menerapkan segmentasi jaringan untuk VLAN 60.
+
+Guest tidak dapat mengakses jaringan internal perusahaan, tetapi tetap dapat mengakses jaringan eksternal melalui Internet.
+
+**Security Policy: PASS ✅**

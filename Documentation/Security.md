@@ -1,5 +1,21 @@
 # Network Security
 
+## Guest Network Isolation
+
+VLAN 60 digunakan sebagai jaringan Guest.
+
+Untuk meningkatkan keamanan, Guest tidak diperbolehkan mengakses jaringan internal perusahaan.
+
+### Security Policy
+
+```text
+Guest → Management    DENY
+Guest → IT            DENY
+Guest → Finance       DENY
+Guest → HR            DENY
+Guest → Server        DENY
+Guest → Internet      ALLOW
+
 ## 1. Tujuan Keamanan
 
 Keamanan jaringan dirancang untuk:
