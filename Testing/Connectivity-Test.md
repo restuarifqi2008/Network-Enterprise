@@ -10,8 +10,9 @@ Pengujian dilakukan menggunakan:
 
 - ICMP Ping
 - Pengujian komunikasi antar-VLAN
+- Pengujian Internet Connectivty
 
-## 3. Hasil Pengujian
+## 3. Hasil Pengujian Antar VLAN
 
 | Source | VLAN | Destination | VLAN | Hasil |
 |---|---:|---|---:|---|
@@ -21,17 +22,21 @@ Pengujian dilakukan menggunakan:
 | PC0 | 10 | DNS Server | 50 | PASS |
 | PC0 | 10 | PC8 | 60 | PASS |
 
-## 4. Detail Pengujian
+## 4. Pengujian Internet Connectivity
 
-### VLAN 10 → VLAN 20
+Seluruh VLAN diuji untuk memastikan dapat mengakses jaringan eksternal melalui NAT/PAT pada Edge Router.
 
-```text
-Source      : PC0
-IP Address  : 10.10.10.10
-Destination : PC2
-IP Address  : 10.10.20.10
+| Source VLAN | Destination | Hasil |
+|---|---|---|
+| VLAN 10 | 8.8.8.8 | PASS |
+| VLAN 20 | 8.8.8.8 | PASS |
+| VLAN 30 | 8.8.8.8 | PASS |
+| VLAN 40 | 8.8.8.8 | PASS |
+| VLAN 50 | 8.8.8.8 | PASS |
+| VLAN 60 | 8.8.8.8 | PASS |
 
-Command:
-ping 10.10.20.10
+### Kesimpulan
 
-Result: PASS
+Seluruh VLAN berhasil mencapai jaringan eksternal melalui Edge Router.
+
+NAT/PAT berhasil menerjemahkan private IP address jaringan internal menuju IP interface WAN R1.
